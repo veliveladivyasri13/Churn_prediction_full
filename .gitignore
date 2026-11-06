@@ -1,0 +1,47 @@
+﻿# Python environments
+.venv/
+venv/
+env/
+
+# Python cache and test cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local datasets - do not commit potentially sensitive or large data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model files and generated outputs
+models/
+artifacts/
+reports/
+outputs/
+logs/
+
+# MLflow local tracking data
+mlruns/
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal/
+
+# Backup folders
+.backup*/
+backup_archive/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Nested duplicate project copy
+/churn-prediction/

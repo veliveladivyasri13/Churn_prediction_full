@@ -1,0 +1,41 @@
+name: Lab 13 - End-to-End MLOps
+# Integration test: process a genuinely new incoming batch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+      timezone: "Asia/Kolkata"
+
+jobs:
+  mlops-monitoring:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run MLOps monitoring trigger
+        shell: powershell
+        run: |
+          $projectDir = if ($env:GITHUB_WORKSPACE -and (Test-Path $env:GITHUB_WORKSPACE)) { $env:GITHUB_WORKSPACE } else { "C:\MLOPS\Churn_Prediction-241FA18343" }
+          Set-Location $projectDir
+          $pythonExe = if (Test-Path ".\venv\Scripts\python.exe") { ".\venv\Scripts\python.exe" } elseif (Test-Path "C:\MLOPS\.venv\Scripts\python.exe") { "C:\MLOPS\.venv\Scripts\python.exe" } else { "python" }
+          & $pythonExe ".\src\mlops_pipeline\12_monitor_trigger.py"
+
+      - name: Show monitoring result
+        shell: powershell
+        run: |
+          $projectDir = if ($env:GITHUB_WORKSPACE -and (Test-Path $env:GITHUB_WORKSPACE)) { $env:GITHUB_WORKSPACE } else { "C:\MLOPS\Churn_Prediction-241FA18343" }
+          Set-Location $projectDir
+          if (Test-Path ".\outputs\monitoring\monitor_trigger_report.json") {
+              Get-Content ".\outputs\monitoring\monitor_trigger_report.json"
+          } else {
+              Write-Host "Monitoring report was not generated."
+          }
+
+      - name: Verify Kubernetes
+        shell: powershell
+        run: |
+          kubectl get deployment churn-api
+          kubectl get pods

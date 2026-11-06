@@ -1,0 +1,223 @@
+Churn_Prediction-241FA18343/
+├── .github/
+│   ├── workflows/
+│   │   ├── lab13_monitoring.yml
+│   │   ├── lab13_runner_test.yml
+│   │   ├── lab8_ci.yml
+│   │   ├── lab9_failure_tests.yml
+├── api/
+│   ├── __init__.py
+│   ├── __pycache__/
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── main.cpython-313.pyc
+│   │   ├── model_loader.cpython-313.pyc
+│   │   ├── monitoring_logger.cpython-313.pyc
+│   │   ├── preprocessing.cpython-313.pyc
+│   │   ├── schemas.cpython-313.pyc
+│   ├── main.py
+│   ├── model_loader.py
+│   ├── monitoring_logger.py
+│   ├── preprocessing.py
+│   ├── schemas.py
+│   ├── stage9_flow.txt
+│   ├── stages.txt
+├── artifacts/
+│   ├── api_performance_report.json
+│   ├── api_test_report.json
+│   ├── baseline_validation.csv
+│   ├── confusion_matrix.png
+│   ├── corrupted_simulation_errors.csv
+│   ├── data_load_report.json
+│   ├── failure_simulation_report.json
+│   ├── new_data_validation.csv
+│   ├── pipeline_reproducibility_report.json
+│   ├── preprocessing_summary_report.json
+│   ├── production_model_report.json
+│   ├── reproducibility_report.json
+│   ├── roc_curve.png
+├── data/
+│   ├── monitoring/
+│   ├── processed/
+│   │   ├── X_test_final.npy
+│   │   ├── X_test_raw.csv
+│   │   ├── X_train_final.npy
+│   │   ├── X_train_raw.csv
+│   │   ├── dataset_metadata.json
+│   │   ├── test_customer_ids.csv
+│   │   ├── updated_training_data.csv
+│   │   ├── y_test.npy
+│   │   ├── y_train.npy
+│   ├── raw/
+│   │   ├── churn.csv
+│   │   ├── new_churn.csv
+├── deployment/
+│   ├── deploy_production.py
+│   ├── model.pkl
+│   ├── model_metadata.json
+│   ├── preprocessor.pkl
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── LAB13_END_TO_END.md
+│   ├── LAB7_PIPELINE.md
+│   ├── LAB8_CI_REPORT.md
+│   ├── LAB9_FAILURE_HANDLING_REPORT.md
+│   ├── MLFLOW_CI_SETUP.md
+│   ├── RUNBOOK.md
+│   ├── lab11_containerization_report.md
+│   ├── lab11_deployment_debugging_report.md
+│   ├── lab12_monitoring_report.md
+├── k8s/
+│   ├── deployment.yaml
+│   ├── service.yaml
+├── lab11_commands/
+│   ├── lab11.13-kubernetes.txt
+│   ├── lab11_docker_kubernetes_reference.txt
+├── logs/
+│   ├── churn_prediction_pipeline_run_log.json
+│   ├── inference/
+│   │   ├── inference_log.jsonl
+│   ├── pipeline_run_log.json
+├── mlruns/
+│   ├── 3/
+├── models/
+│   ├── churn_decision_threshold.pkl
+│   ├── churn_full_pipeline.pkl
+│   ├── churn_model.pkl
+│   ├── churn_xgboost_pipeline.pkl
+│   ├── decision_tree_baseline.pkl
+│   ├── ohe.pkl
+│   ├── preprocessor.pkl
+│   ├── random_forest_baseline.pkl
+│   ├── random_forest_model.pkl
+│   ├── retrained_model_v2.pkl
+│   ├── retrained_preprocessor_v2.pkl
+│   ├── scaler.pkl
+├── notebooks/
+│   ├── churn_prediction.ipynb
+│   ├── project_implementation.ipynb
+├── outputs/
+│   ├── drift/
+│   │   ├── concept_drift_report.csv
+│   │   ├── data_drift_report.csv
+│   │   ├── drift_analysis_report.csv
+│   │   ├── prediction_drift_report.csv
+│   ├── false_negatives.csv
+│   ├── false_positives.csv
+│   ├── inference_predictions.csv
+│   ├── lab7_false_negatives.csv
+│   ├── lab7_false_positives.csv
+│   ├── lab7_inference_predictions.csv
+│   ├── monitoring/
+│   │   ├── monitor_trigger_report.json
+│   ├── retraining/
+│   │   ├── mlflow_registry_update_report.json
+│   │   ├── model_comparison_report.csv
+│   │   ├── model_comparison_report.json
+│   │   ├── retraining_report.json
+│   │   ├── updated_dataset_summary.csv
+├── pipelines/
+│   ├── __pycache__/
+│   │   ├── run_lab3_baseline.cpython-313.pyc
+│   │   ├── run_lab4_tracking.cpython-313.pyc
+│   │   ├── run_lab5_pipeline.cpython-313.pyc
+│   │   ├── run_lab6_registry.cpython-313.pyc
+│   ├── run_lab3_baseline.py
+│   ├── run_lab4_tracking.py
+│   ├── run_lab5_pipeline.py
+│   ├── run_lab6_registry.py
+├── reports/
+│   ├── api_testing_report.json
+│   ├── deployment_automation_report.json
+│   ├── evaluation_report.json
+│   ├── failure_report.json
+│   ├── lab10_summary.md
+│   ├── lifecycle_report.json
+│   ├── performance_report.json
+│   ├── quality_gate_report.json
+├── src/
+│   ├── __pycache__/
+│   │   ├── automate_lifecycle.cpython-313.pyc
+│   │   ├── evaluate.cpython-313.pyc
+│   │   ├── generate_registry_report.cpython-313.pyc
+│   │   ├── preprocess.cpython-313.pyc
+│   │   ├── preprocess_pipeline.cpython-313.pyc
+│   │   ├── simulate_data_corruption.cpython-313.pyc
+│   │   ├── temp_manage_registry.cpython-313.pyc
+│   │   ├── train.cpython-313.pyc
+│   │   ├── train_mlflow.cpython-313.pyc
+│   │   ├── train_registry.cpython-313.pyc
+│   │   ├── validate_data.cpython-313.pyc
+│   │   ├── validate_outputs.cpython-313.pyc
+│   │   ├── validate_reproducibility.cpython-313.pyc
+│   ├── automate_lifecycle.py
+│   ├── evaluate.py
+│   ├── generate_registry_report.py
+│   ├── mlops_pipeline/
+│   │   ├── 01_load_data.py
+│   │   ├── 02_validate_data.py
+│   │   ├── 03_preprocessing.py
+│   │   ├── 04_validate_outputs.py
+│   │   ├── 05_train_registry.py
+│   │   ├── 06_model_evaluation.py
+│   │   ├── 07_quality_gate.py
+│   │   ├── 08_automate_lifecycle.py
+│   │   ├── 09_inference.py
+│   │   ├── 10_failure_injection.py
+│   │   ├── 11_prepare_deployment.py
+│   │   ├── 12_api_performance_monitoring.py
+│   │   ├── 12_concept_drift.py
+│   │   ├── 12_create_concept_drift_dataset.py
+│   │   ├── 12_create_evolved_dataset.py
+│   │   ├── 12_create_updated_dataset.py
+│   │   ├── 12_data_drift.py
+│   │   ├── 12_drift_analysis.py
+│   │   ├── 12_model_comparison.py
+│   │   ├── 12_monitor_trigger.py
+│   │   ├── 12_performance_monitoring.py
+│   │   ├── 12_performance_trend.py
+│   │   ├── 12_prediction_drift.py
+│   │   ├── 12_prediction_monitoring.py
+│   │   ├── 12_request_history.py
+│   │   ├── 12_retrain_model.py
+│   │   ├── 12_update_mlflow_registry.py
+│   │   ├── check_mlflow_registry.py
+│   │   ├── churn_prediction_pipeline.py
+│   │   ├── deploy_if_promoted.py
+│   │   ├── validation.py
+│   ├── preprocess.py
+│   ├── preprocess_pipeline.py
+│   ├── simulate_data_corruption.py
+│   ├── temp_manage_registry.py
+│   ├── train.py
+│   ├── train_mlflow.py
+│   ├── train_registry.py
+│   ├── validate_data.py
+│   ├── validate_outputs.py
+│   ├── validate_reproducibility.py
+├── tests/
+│   ├── __init__.py
+│   ├── __pycache__/
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── test_api.cpython-313.pyc
+│   │   ├── test_local_vs_container.cpython-313.pyc
+│   │   ├── test_mlops_pipeline.cpython-313.pyc
+│   │   ├── test_performance.cpython-313.pyc
+│   ├── test_api.py
+│   ├── test_local_vs_container.py
+│   ├── test_mlops_pipeline.py
+│   ├── test_performance.py
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── GIT_WORKFLOW.md
+├── PROJECT_COMPLETION_REPORT.md
+├── PROJECT_STRUCTURE.txt
+├── README.md
+├── check_mlflow.py
+├── config.yaml
+├── inspect_mlflow_run.py
+├── inspect_model_version.py
+├── lab11_complete_flow.md
+├── mlflow.db
+├── requirements-api.txt
+├── requirements.txt
